@@ -1,32 +1,21 @@
+
 <?php
 /**
  * Created by PhpStorm.
  * User: hurricane
- * Date: 04/09/17
- * Time: 21:44
+ * Date: 09/09/17
+ * Time: 09:56
  */
-<?php
-// Mes étudiants
-$students = [
-    "Emmanuel"  => 42,
-    "Thierry"   => 51,
-    "Pascal"    => 45,
-    "Eric"      => 48,
-    "Nicolas"   => 19
-];
 
-
-// Mon total est égales a la totalités des étudiants//$students
-$total = $students["Emmanuel"] + $students["Thierry"] + $students["Pascal"] +
-    $students["Eric"] + $students["Nicolas"];
-
-//Ma moyenne est égale a la totalités diviser via balise count par le nombre d'étudiants
-$moyenne = $total/ count($students);
-
-// Affichage des ages et de la moyenne avec l 'aide de la balise echo
-echo "Emmanuel a <strong> $students[Emmanuel] </strong> ans. ";
-echo "Thierry a <strong> $students[Thierry] </strong> ans. ";
-echo "Pascal a <strong> $students[Pascal] </strong> ans. ";
-echo "Eric a <strong> $students[Eric] </strong> ans. ";
-echo "Nicolas a <strong> $students[Nicolas] </strong> ans. ";
-echo "La moyenne d'âge est des étudiants est de <strong> $moyenne </strong> ans.";
+// troizieme essai avec un "foreach" etla fonction "array" afin d'ergonomiser mon code
+//
+$students = array("Emmanuel" => "42", "Thierry" => "51", "Pascal" => "45", "Eric" => "48", "Nicolas" => "19");
+    foreach($students as $k=>$v){
+        echo "$k a $v ans <br/>";
+    }
+// ici dessus echo me mettra en vue "$k" qui sera ma valeur clé donc les étudiants
+//et "$v" donnera ma valeur qui sera l'age.
+    $moyenne = array_sum($students)/count($students);
+// donc au resultats final la moyenne sera le total de mes valeur "$students" avec la fonction "array_sum"
+//diviser par le nombre d'étudiant avec "count".
+echo "La moyenne d'âge des étudiants est de <strong> $moyenne </strong> ans.";
